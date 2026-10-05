@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Worksheet - Our School</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:900px;margin:0 auto;padding:28px;color:#222;line-height:1.5}
+h1{text-align:center;margin-bottom:4px}.sub{text-align:center;color:#666;margin-bottom:25px}
+table{width:100%;border-collapse:collapse;margin:15px 0 28px}
+th,td{border:1px solid #aaa;padding:10px;text-align:center}
+th{background:#f0f0f0}
+button{font-size:18px;padding:5px 10px;border:1px solid #888;border-radius:8px;background:white;cursor:pointer}
+.word{font-weight:bold;font-size:18px}
+.ipa{font-family:"Times New Roman",serif}
+.box{border:2px solid #888;border-radius:12px;padding:16px;margin:20px 0}
+.blank{display:inline-block;border-bottom:1px solid #555;width:120px}
+ol li{margin:12px 0}
+.answer{color:#555}
+.pattern{font-size:19px;text-align:center;margin:8px}
+.yes{font-weight:bold}.no{font-weight:bold}
+@media print{button{display:none}.box{break-inside:avoid}}
+</style>
+</head>
+<body>
+<h1>VOCABULARY WORKSHEET</h1>
+<div class="sub">Our School • Listen – Say – Remember – Practise</div>
+
+<table>
+<tr><th>Word</th><th>IPA</th><th>Vietnamese</th><th>🔊</th></tr>
+<tr><td class="word">look</td><td class="ipa">/lʊk/</td><td>nhìn</td><td><button onclick="speak('look')">🔊</button></td></tr>
+<tr><td class="word">picture</td><td class="ipa">/ˈpɪktʃə(r)/</td><td>bức tranh / hình ảnh</td><td><button onclick="speak('picture')">🔊</button></td></tr>
+<tr><td class="word">our</td><td class="ipa">/aʊə(r)/</td><td>của chúng ta / của chúng tôi</td><td><button onclick="speak('our')">🔊</button></td></tr>
+<tr><td class="word">school</td><td class="ipa">/skuːl/</td><td>trường học</td><td><button onclick="speak('school')">🔊</button></td></tr>
+<tr><td class="word">classroom</td><td class="ipa">/ˈklɑːsruːm/</td><td>lớp học</td><td><button onclick="speak('classroom')">🔊</button></td></tr>
+<tr><td class="word">library</td><td class="ipa">/ˈlaɪbrəri/</td><td>thư viện</td><td><button onclick="speak('library')">🔊</button></td></tr>
+<tr><td class="word">playground</td><td class="ipa">/ˈpleɪɡraʊnd/</td><td>sân chơi</td><td><button onclick="speak('playground')">🔊</button></td></tr>
+</table>
+
+<div class="box">
+<h2>1. Sentence Pattern</h2>
+<div class="pattern"><b>Is this our + place?</b></div>
+<div class="pattern yes">Yes, it is.</div>
+<div class="pattern no">No, it isn't.</div>
+<p><b>Ví dụ:</b></p>
+<p>Is this our school? → Yes, it is.</p>
+<p>Is this our library? → No, it isn't.</p>
+<button onclick="speak('Is this our school?')">🔊 Hear the question</button>
+<button onclick="speak('Yes, it is.')">🔊 Hear the answer</button>
+</div>
+
+<div class="box">
+<h2>2. Fill in the blanks</h2>
+<ol>
+<li>Look at the __________. (bức tranh)</li>
+<li>This is our __________. (trường học)</li>
+<li>This is our __________. We have many books here. (thư viện)</li>
+<li>We study in the __________. (lớp học)</li>
+<li>We play in the __________. (sân chơi)</li>
+</ol>
+</div>
+
+<div class="box">
+<h2>3. Choose the correct answer</h2>
+<ol>
+<li>Is this our school?<br> A. Yes, it is. &nbsp;&nbsp; B. No, it isn't.</li>
+<li>Is this our library?<br> A. Yes, it is. &nbsp;&nbsp; B. No, it isn't.</li>
+<li>Is this our playground?<br> A. Yes, it is. &nbsp;&nbsp; B. No, it isn't.</li>
+</ol>
+</div>
+
+<div class="box">
+<h2>4. Speak</h2>
+<p>Ask and answer with a partner.</p>
+<p><b>A:</b> Is this our classroom?</p>
+<p><b>B:</b> Yes, it is.</p>
+<p><b>A:</b> Is this our playground?</p>
+<p><b>B:</b> No, it isn't.</p>
+</div>
+
+<script>
+function speak(text){
+  if(!('speechSynthesis' in window)){alert('Trình duyệt này không hỗ trợ phát âm tự động.');return;}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-GB';
+  u.rate=0.82;
+  u.pitch=1;
+  speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>
